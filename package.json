@@ -1,0 +1,84 @@
+{
+  "name": "@playfuldesign/templates",
+  "version": "0.2.3",
+  "description": "Coded fonts, textures, frames and design assets that can be installed from npm or designed in Playful.",
+  "license": "Apache-2.0",
+  "author": "Playful Design and Chloe Barreau",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Playful-Design/playful-templates.git"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "docs/assets",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./templates": {
+      "types": "./dist/templates.d.ts",
+      "import": "./dist/templates.js"
+    },
+    "./fonts/marker-alphabet": {
+      "types": "./dist/fonts/marker-alphabet.d.ts",
+      "import": "./dist/fonts/marker-alphabet.js"
+    },
+    "./fonts/stick-pen": {
+      "types": "./dist/fonts/stick-pen.d.ts",
+      "import": "./dist/fonts/stick-pen.js"
+    },
+    "./fonts/charm-bead": {
+      "types": "./dist/fonts/charm-bead.d.ts",
+      "import": "./dist/fonts/charm-bead.js"
+    },
+    "./patterns/grid-gradient": {
+      "types": "./dist/patterns/grid-gradient.d.ts",
+      "import": "./dist/patterns/grid-gradient.js"
+    },
+    "./patterns/star-mask": {
+      "types": "./dist/patterns/star-mask.d.ts",
+      "import": "./dist/patterns/star-mask.js"
+    },
+    "./textures/pencil-paper": {
+      "types": "./dist/textures/pencil-paper.d.ts",
+      "import": "./dist/textures/pencil-paper.js"
+    },
+    "./textures/thermal-ink": {
+      "types": "./dist/textures/thermal-ink.d.ts",
+      "import": "./dist/textures/thermal-ink.js"
+    },
+    "./frames/torn-paper": {
+      "types": "./dist/frames/torn-paper.d.ts",
+      "import": "./dist/frames/torn-paper.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/react.ts src/templates.tsx src/fonts/marker-alphabet.tsx src/fonts/stick-pen.tsx src/fonts/charm-bead.tsx src/patterns/grid-gradient.tsx src/patterns/star-mask.tsx src/textures/pencil-paper.tsx src/textures/thermal-ink.tsx src/frames/torn-paper.tsx --format esm --dts --clean",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "three": ">=0.160"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "three": "^0.180.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.5.3"
+  }
+}
